@@ -36,7 +36,7 @@ THE SOFTWARE.
 #include "CCKeypadDispatcher.h"
 #include "CCApplication.h"
 
-#include "../../extensions//CCInputDispatcher.h"
+#include "../../extensions/CCInputDispatcher.h"
 
 #include <algorithm>
 
