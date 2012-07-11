@@ -217,7 +217,7 @@ namespace cocos2d {
     }
     
     void CCGestureRecognizer::removeRecognizer(unsigned long which) {
-        CCGestureRecognizerMap::iterator it = mGestureRegozniers.find(which);
+        GestureRecognizerMap::iterator it = mGestureRegozniers.find(which);
         if(it != mGestureRegozniers.end()) {
             UIGestureRecognizer* recognizer = (UIGestureRecognizer*)it->second;
             UIWindow* window = [[UIApplication sharedApplication] keyWindow];
@@ -230,7 +230,7 @@ namespace cocos2d {
     
     void CCGestureRecognizer::removeAllRecognizers() {
         UIWindow* window = [[UIApplication sharedApplication] keyWindow];
-        for(CCGestureRecognizerMap::iterator it = mGestureRegozniers.begin(),
+        for(GestureRecognizerMap::iterator it = mGestureRegozniers.begin(),
             end = mGestureRegozniers.end();
             it != end;
             ++it) {
@@ -242,7 +242,7 @@ namespace cocos2d {
     }
     
     void* CCGestureRecognizer::getRecognizerByTag(unsigned long which) const {
-        CCGestureRecognizerMap::const_iterator it = mGestureRegozniers.find(which);
+        GestureRecognizerMap::const_iterator it = mGestureRegozniers.find(which);
         if(it != mGestureRegozniers.end()) {
             return it->second;
         }

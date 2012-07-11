@@ -30,10 +30,10 @@
 #ifndef CCGestureRecognizer_h
 #define CCGestureRecognizer_h
 
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-
 #include "ListenerManager.h"
 #include "CCPlatformConfig.h"
+
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
 #include <map>
 

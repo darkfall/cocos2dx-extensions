@@ -20,3 +20,9 @@ Here are some cocos2dx extensions I wrote/modified during the development of my 
 	* CCGestureRecognizer:	Singleton that manages UIGestureRecognizers
 	* CCGestureLister:	Gesture event listener, inheritate from this class and add self to CCGestureRecognizer to receive gesture events
 
+Note: To support Gesture Recognizers, you need to add 
+
+	window.rootViewController = viewController
+	
+in your AppController.mm manually
+

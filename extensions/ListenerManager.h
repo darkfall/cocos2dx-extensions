@@ -2,7 +2,7 @@
 //  ListenerManager.h
 //  TVPortable
 //
-//  Created by Ruiwei Bu on 6/22/12.
+//  Created by Robert Bu on 6/22/12.
 //  Copyright (c) 2012 Studio Symphonie. All rights reserved.
 //
 
@@ -47,6 +47,47 @@ namespace TVPortable {
                         mListenerMap.insert(std::make_pair(tag, listener));
                     }
                 }
+            }
+        }
+
+        void removeListener(ListenerType* listener) {
+            if(!listener)
+                return;
+            for(typename ListenerList::iterator it = mListenerList.begin(),
+                end = mListenerList.end();
+                it != end;
+                ++it) {
+                if(it->first == listener) {
+                    mListenerList.erase(it);
+                    break;
+                }
+            }
+            
+            for(typename ListenerMap::iterator it = mListenerMap.begin(),
+                end = mListenerMap.end();
+                it != end;
+                ++it) {
+                if(it->second == listener) {
+                    mListenerMap.erase(it);
+                    break;
+                }
+            }
+        }
+        
+        void removeListener(const TAG_TYPE& tag) {
+            typename ListenerMap::iterator it = mListenerMap.find(tag);
+            if(it != mListenerMap.end()) {
+                for(typename ListenerList::iterator lit = mListenerList.begin(),
+                    lend = mListenerList.end();
+                    lit != lend;
+                    ++lit) {
+                    if(lit->first == it->second) {
+                        mListenerList.erase(lit);
+                        break;
+                    }
+                }
+                
+                mListenerMap.erase(it);
             }
         }
         
