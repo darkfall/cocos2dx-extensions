@@ -6,7 +6,7 @@ Here are some cocos2dx extensions I wrote/modified during the development of my 
 
 	* CCInputEvent:		Represents keyboard / mouse / joystick events(not completed)
 	* CCInputDispatcher:	Singleton that works with platform implementations to dispatch input events(modified platform sources required, see platform folder, cocos2dx-mac from http://www.cocos2d-x.org/boards/6/topics/10352)
-	* CCInputListener:	Input event listener, inheritate from this class and add self to CCInputDispatcher to receive input events
+	* CCInputListener:	Input event listener, inherit from this class and add self to CCInputDispatcher to receive input events
 
 
 ###Mutable CCTexture2D and CCRenderTexture
@@ -18,7 +18,7 @@ Here are some cocos2dx extensions I wrote/modified during the development of my 
 ###Gesture Recognizers for iOS
 	
 	* CCGestureRecognizer:	Singleton that manages UIGestureRecognizers
-	* CCGestureLister:	Gesture event listener, inheritate from this class and add self to CCGestureRecognizer to receive gesture events
+	* CCGestureLister:	Gesture event listener, inherit from this class and add self to CCGestureRecognizer to receive gesture events
 
 Note: To support Gesture Recognizers, you need to add 
 
