@@ -26,3 +26,6 @@ Note: To support Gesture Recognizers, you need to add
 	
 in your AppController.mm manually
 
+###CCMenuItemProgressTimer
+
+	* CCMenuItemProgressTimer: CCMenuItem with a progress timer mask. Useful for skill button will cooldown.
