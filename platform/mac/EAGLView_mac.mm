@@ -198,7 +198,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 {
 #if 1
 	DISPATCH_EVENT(theEvent, _cmd);
-#else
+#endif
 	cocos2d::CCSet set;
     cocos2d::CCTouch *pTouch;
 
@@ -229,7 +229,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 	set.addObject(pTouch);
 	
 	cocos2d::CCDirector::sharedDirector()->getOpenGLView()->touchesBegan(&set);
-#endif
 }
 
 - (void)mouseMoved:(NSEvent *)theEvent
@@ -241,7 +240,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 {
 #if 1
 	DISPATCH_EVENT(theEvent, _cmd);
-#else
+#endif
 	cocos2d::CCSet set;
 	
 	NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, [NSNumber numberWithInt:11]);
@@ -266,14 +265,13 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 	set.addObject(pTouch);
 	
 	cocos2d::CCDirector::sharedDirector()->getOpenGLView()->touchesMoved(&set);	
-#endif
 }
 
 - (void)mouseUp:(NSEvent *)theEvent
 {
 #if 1
 	DISPATCH_EVENT(theEvent, _cmd);
-#else
+#endif
 	cocos2d::CCSet set;
 	
 	NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, [NSNumber numberWithInt:11]);
@@ -307,7 +305,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 		cocos2d::CCTouch* pTouch = (cocos2d::CCTouch*)(*iter);
 		pTouch->release();
 	}	
-#endif
 }
 
 - (void)rightMouseDown:(NSEvent *)theEvent {
