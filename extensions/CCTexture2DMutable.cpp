@@ -29,7 +29,7 @@ void CCTexture2DMutable::setTexData(void *var) {
 }
 
     void CCTexture2DMutable::updateData() {
-#if CC_TARGET_PLATFORM != CC_PLATFORM_IOS && CC_TARGET_PLATFORM != CC_PLATFORM_WIN32
+#if CC_TARGET_PLATFORM != CC_PLATFORM_IOS && CC_TARGET_PLATFORM != CC_PLATFORM_WIN32 && CC_TARGET_PLATFORM !=CC_PLATFORM_ANDROID
 
         glBindTexture(GL_TEXTURE_2D, m_uName);
         
