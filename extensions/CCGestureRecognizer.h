@@ -30,8 +30,8 @@
 #ifndef CCGestureRecognizer_h
 #define CCGestureRecognizer_h
 
-#include "ListenerManager.h"
 #include "CCPlatformConfig.h"
+#include "ListenerManager.h"
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 
@@ -51,6 +51,8 @@ namespace cocos2d {
         virtual void onRotation(unsigned long which, float rotation, float velocity) { }
         
     };
+    
+    class CCGestureRecognizerImpl;
     
     class CCGestureRecognizer: public TVPortable::ListenerManager<CCGestureListener> {
     public:
@@ -80,7 +82,7 @@ namespace cocos2d {
         
     public:
         /* used by listeners
-           users can also call these functions to simulate a gesture */
+         users can also call these functions to simulate a gesture */
         void onPinch(unsigned long which, float v, float scale, float x, float y);
         void onPan(unsigned long which, float translationX, float translationY, float velocityX, float velocityY);
         void onLongPress(unsigned long which);
@@ -93,8 +95,7 @@ namespace cocos2d {
         ~CCGestureRecognizer();
         
     private:        
-        typedef std::map<unsigned long, void*> GestureRecognizerMap;
-        GestureRecognizerMap mGestureRegozniers;
+        CCGestureRecognizerImpl* mImpl;
     };
     
 }

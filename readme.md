@@ -26,6 +26,8 @@ Note: To support Gesture Recognizers, you need to add
 	
 in your AppController.mm manually
 
+Also if you are using ARC on iOS 5.x, you need to add -fno-objc-arc option to CCGestureRecognizer.mm in your build phases.
+
 ###CCMenuItemProgressTimer
 
 	* CCMenuItemProgressTimer: CCMenuItem with a progress timer mask. Useful for skill button with cooldown etc.
