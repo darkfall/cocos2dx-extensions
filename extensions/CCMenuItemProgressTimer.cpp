@@ -186,6 +186,14 @@ namespace cocos2d {
         }
     }
     
+    void CCMenuItemProgressTimer::preventTimer() {
+        this->unschedule(schedule_selector(CCMenuItemProgressTimer::onTimerTick));
+        
+        mCurrent = 0.f;
+        mCanBeActivated = true;
+        mProgressTimer->setPercentage(0);
+    }
+    
     void CCMenuItemProgressTimer::selected() {
         CCMenuItem::selected();
     }
@@ -233,6 +241,5 @@ namespace cocos2d {
             mCanBeActivated = true;
         }
         mProgressTimer->setPercentage((1.f - mCurrent / mInterval) * 100.f);
-        printf("%f\n", mProgressTimer->getPercentage());
     }
 }

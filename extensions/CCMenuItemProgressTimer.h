@@ -46,6 +46,10 @@ namespace cocos2d {
         virtual void unselected();
         virtual void setIsEnabled(bool bEnabled);
         
+    public:
+        // prevent timer fire after activate
+        void preventTimer();
+        
     protected:
         
         bool init(CCSprite* mask, CCSprite* normalSprite, CCSprite* disabledSprite, float interval, CCProgressTimerType type, SelectorProtocol* target, SEL_MenuHandler selector);
